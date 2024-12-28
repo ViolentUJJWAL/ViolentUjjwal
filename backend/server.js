@@ -11,12 +11,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
-app.use(express.static('public'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["*", "http://localhost:5173", "https://violentujjwal.onrender.com"],
+    origin: ["*", "http://localhost:5174", "https://violentujjwal.onrender.com"],
     credentials: true,
   })
 );

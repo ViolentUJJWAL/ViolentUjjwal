@@ -166,38 +166,42 @@ const Hero = () => {
             </div>
           </div>
           <div className='md:w-1/2 relative flex justify-center items-end'>
-            <img src={hero} alt="" className='lg:h-[90vh] h-96 z-10' />
+            <div className='relative z-10'>
+              <img src={hero} alt="" className='lg:h-[90vh] h-96' />
+              <div className='absolute bottom-0 w-full'>
+                <div
+                  className='flex gap-6 lg:w-[70%] mx-auto rounded-full p-4 z-20 justify-between'
+                  style={socialContainerStyle}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <div className="cursor-pointer" style={iconStyle}>
+                    <a href={user?.githubLink} target='__blank'>
+                      <FaGithub className="w-12 h-12" />
+                    </a>
+                  </div>
+                  <div className="cursor-pointer" style={iconStyle}>
+                    <a href={user?.linkedinLink} target='__blank'>
+                      <FaLinkedin className="w-12 h-12" />
+                    </a>
+                  </div>
+                  <div className="cursor-pointer" style={iconStyle}>
+                    <a href={`mailto:${user?.email}`} target='__blank'>
+                      <MdEmail className="w-12 h-12" />
+                    </a>
+                  </div>
+                  <div className="cursor-pointer" style={iconStyle}>
+                    <a href={`https://wa.me/${user?.phoneNumaber}`} target='__blank'>
+                      <FaSquareWhatsapp className="w-12 h-12" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
             <img src={reactLogo} alt="" className='absolute w-10 top-36 left-8 rounded-full' />
             <img src={reduxLogo} alt="" className='absolute w-10 top-8 right-5' />
             <img src={tailwind} alt="" className='absolute w-10 rounded-full right-8 bottom-36' />
           </div>
-        </div>
-      </div>
-      <div
-        className='absolute bottom-4 right-52 md:flex gap-6 rounded-full p-4 z-20'
-        style={socialContainerStyle}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="cursor-pointer" style={iconStyle}>
-          <a href={user?.githubLink} target='__blank'>
-            <FaGithub className="w-12 h-12" />
-          </a>
-        </div>
-        <div className="cursor-pointer" style={iconStyle}>
-          <a href={user?.linkedinLink} target='__blank'>
-            <FaLinkedin className="w-12 h-12" />
-          </a>
-        </div>
-        <div className="cursor-pointer" style={iconStyle}>
-          <a href={`mailto:${user?.email}`} target='__blank'>
-            <MdEmail className="w-12 h-12" />
-          </a>
-        </div>
-        <div className="cursor-pointer" style={iconStyle}>
-          <a href={`https://wa.me/${user?.phoneNumaber}`} target='__blank'>
-            <FaSquareWhatsapp className="w-12 h-12" />
-          </a>
         </div>
       </div>
     </section>

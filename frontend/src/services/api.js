@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance with base URL
 const api = axios.create({
-  baseURL: "https://violentujjwal.onrender.com" || "http://localhost:5000/api",
+  baseURL:  "http://localhost:5000/api" || "https://violentujjwal.onrender.com",
   withCredentials: true,
 });
 
