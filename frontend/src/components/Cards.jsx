@@ -10,12 +10,12 @@ const Cards = ({ item }) => {
         }
     }
     return (
-        <div className='rounded-lg w-[350px] lg:w-[400px] bg-cyan-50' style={getCardStyle()}>
+        <div className='rounded-lg w-[350px] h-[550px] lg:w-[400px] bg-cyan-50 relative' style={getCardStyle()}>
             <img src={item?.image?.url} alt="" className='rounded-lg w-full h-48' />
             <div className='p-4'>
                 <h1 className='font-semibold text-xl mb-2'>{item.title}</h1>
                 <p>{item.description}</p>
-                <div className='flex gap-3 mt-4'>
+                <div className='flex gap-3 mt-4 absolute bottom-2'>
                     <button className='text-white font-semibold px-3 py-2 rounded-md hover:text-gray-900' style={{background: activeTheme}}><a href={item.liveLink} target='_blank'>Live Preview</a></button>
                     <button className='bg-black text-white px-3 py-2 rounded-md hover:bg-gray-700'>
                         <a href={item.gitLink} target='_blank' className='flex gap-1'>
